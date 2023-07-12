@@ -1,0 +1,31 @@
+const conn = require('./config.js');
+var data = [];
+async function sent_tran(req, res) {
+    const from_id = 106;
+    
+    let query = ('Select too_u_id,amount from transaction where from_u_id = ' + from_id + ';');
+    await conn.query(query, async function (err, data1) {
+        if (err) throw err;
+        else {
+            // console.log(data1);
+            for (let i = 0; i < data1.length; i++) {
+                // console.log(data1[i].too_u_id);
+                let query = ('select name from user where id = ' + data1[i].too_u_id + ';')
+                await conn.query(query, async function (err, data2) {
+                    // console.log(data2[0].name)
+                    data.push({'name': data2[0].name, 'amount' : data1[i].amount})
+
+                    // console.log(data[i].name,'-' ,data[i].amount + '\n');
+                    // console.log(data.length)
+
+                })
+            }
+        }
+    })
+    for (var i = 0; i <2  ;i++) {
+    console.log(data);
+    }
+    return data;
+
+}
+module.exports = sent_tran;

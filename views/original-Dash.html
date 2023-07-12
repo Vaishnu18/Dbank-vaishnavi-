@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Sidebar #8</title>
+  </head>
+  <body>
+  
+    
+    <aside class="sidebar">
+      <div class="toggle">
+        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+              <span></span>
+            </a>
+      </div>
+      <div class="side-inner">
+
+        <div class="profile">
+          <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+          <h3 class="name">
+            <%= name %></h3>
+          <span class="country">Web Designer</span>
+        </div>
+
+        
+        <div class="nav-menu">
+          <ul>
+            <li class="accordion">
+              <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsible">
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg></span> &nbsp;&nbsp;</span>My Profile
+              </a>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                <div>
+                  <ul>
+                    <li><a href="#">Account Summary</a></li>
+                    <li><a href="#">Edit Profile</a></li>
+                    <li><a href="#">Define Limit</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="accordion">
+              <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsible">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>&nbsp;&nbsp;</span>Transactions
+              </a>
+
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne">
+                <div>
+                  <ul>
+                    <li><a href="/new-transaction.ejs">New</a></li>
+                    <li><a href="#">Sent</a></li>
+                    <li><a href="#">Recieved</a></li>
+                    <li><a href="#">BlockChain Transactions</a></li>
+                  </ul>
+                </div>
+              </div>
+
+            </li>
+            
+            <li>
+             
+              <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+              </svg>&nbsp;&nbsp; Manage Beneficiary</a></li>
+            <li><a href="#"><span class="icon-notifications mr-3"></span>Notifications</a></li>
+            <li><a href="#"><span class="icon-location-arrow mr-3"></span>Chat</a></li>
+            <li><a href="#" onclick="logout()" ><span class="icon-sign-out mr-3"></span>Sign out</a></li>
+            <script>
+              function logout() {
+  fetch('/logout?_method=DELETE', {
+    method: 'POST'
+  })
+  .then(response => {
+    if (response.redirected) {
+      // Redirect the user to the login page
+      window.location.href = 'login';
+    } else {
+      // Handle any errors
+      console.error('Failed to log out');
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+}
+
+            </script>
+          </ul>
+        </div>
+      </div>
+      
+    </aside>
+    <main>
+      <div class="site-section">
+        <div class="container">
+          <div class="row justify-content-center">
+
+
+
+
+
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex post-entry">
+                    <div class="custom-thumbnail">
+                      <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                    </div>
+                    <div class="post-content">
+                      <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                      <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>  
+    </main>
+    
+    
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
